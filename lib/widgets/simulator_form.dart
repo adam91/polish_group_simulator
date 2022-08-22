@@ -351,14 +351,49 @@ class _SimulatorFormState extends State<SimulatorForm> {
                 ),
                 Consumer<SimulatorProvider>(
                   builder: (context, simulator, _) {
+                    Map<dynamic, dynamic> points = {
+                      'Poland': {
+                        'points': simulator.data.polandpoints,
+                        'goalsfor': simulator.data.polandgoalsfor,
+                        'goalsagainst': simulator.data.polandgoalsagainst
+                      },
+                      'Mexico': {
+                        'points': simulator.data.mexicopoints,
+                        'goalsfor': simulator.data.mexicogoalsfor,
+                        'goalsagainst': simulator.data.mexicogoalsagainst
+                      },
+                      'Argentina': {
+                        'points': simulator.data.argentinapoints,
+                        'goalsfor': simulator.data.argentinagoalsfor,
+                        'goalsagainst': simulator.data.argentinagoalsagainst
+                      },
+                      'Saudi Arabia': {
+                        'points': simulator.data.saudiarabiapoints,
+                        'goalsfor': simulator.data.saudiarabiagoalsfor,
+                        'goalsagainst': simulator.data.saudiarabiagoalsagainst
+                      },
+                    };
+
+                    var mapsort = Map.fromEntries(
+                      points.entries.toList()
+                        ..sort(
+                          (e1, e2) {
+                            int a = e1.value['points']
+                                .compareTo(e2.value['points']);
+                            if (a != 0) return a;
+                            return e1.value['goalsfor']
+                                .compareTo(e2.value['goalsfor']);
+                          },
+                        ),
+                    );
+
                     return Text(
-                        '''Poland goals: ${simulator.data.polandgoalsfor}:${simulator.data.polandgoalsagainst} Points: ${simulator.data.polandpoints}
+                        '''$mapsort Poland goals: ${simulator.data.polandgoalsfor}:${simulator.data.polandgoalsagainst} Points: ${simulator.data.polandpoints}
                            Mexico goals: ${simulator.data.mexicogoalsfor}:${simulator.data.mexicogoalsagainst} Points: ${simulator.data.mexicopoints}
                            Argentina goals: ${simulator.data.argentinagoalsfor}:${simulator.data.argentinagoalsagainst} Points:  ${simulator.data.argentinapoints}
                            Saudi Arabia goals: ${simulator.data.saudiarabiagoalsfor}:${simulator.data.saudiarabiagoalsagainst} Points: ${simulator.data.saudiarabiapoints}''');
                   },
                 ),
-                Text(Simulator().polandpoints.toString())
               ],
             ),
           ],

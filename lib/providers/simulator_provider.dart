@@ -32,9 +32,10 @@ class SimulatorProvider extends ChangeNotifier {
     int? saudiarabiapoints = 0,
     int? saudiarabiagoalsfor = 0,
     int? saudiarabiagoalsagainst = 0,
+    String? groupwinner = '',
   }) {
     _simulator
-      ..poland1 = poland1 ?? 0
+      ..poland1 = poland1!
       ..poland2 = poland2 ?? 0
       ..poland3 = poland3 ?? 0
       ..mexico1 = mexico1 ?? 0
@@ -46,7 +47,7 @@ class SimulatorProvider extends ChangeNotifier {
       ..saudiarabia1 = saudiarabia1 ?? 0
       ..saudiarabia2 = saudiarabia2 ?? 0
       ..saudiarabia3 = saudiarabia3 ?? 0
-      ..polandpoints = ((poland1! > mexico1!) ? 3 : 0) +
+      ..polandpoints = ((poland1 > mexico1!) ? 3 : 0) +
           ((poland1 == mexico1) ? 1 : 0) +
           ((poland2! > saudiarabia2!) ? 3 : 0) +
           ((poland2 == saudiarabia2) ? 1 : 0) +
@@ -77,23 +78,8 @@ class SimulatorProvider extends ChangeNotifier {
           ((mexico3 < saudiarabia3) ? 3 : 0) +
           ((mexico3 == saudiarabia3) ? 1 : 0)
       ..saudiarabiagoalsfor = saudiarabia1 + saudiarabia2 + saudiarabia3
-      ..saudiarabiagoalsagainst = argentina1 + poland2 + mexico3;
-
-    if (poland1 > mexico1) {
-      polandpoints = (polandpoints! + 3);
-    } else if (poland1 < mexico1) {
-      mexicopoints = (mexicopoints! + 3);
-    } else {
-      polandpoints = (polandpoints! + 1);
-      mexicopoints = (mexicopoints! + 1);
-    }
-
-    if (poland1 > mexico1) {
-      polandpoints = (polandpoints! + 3);
-    } else if (poland1 == mexico1) {
-      polandpoints = (polandpoints! + 1);
-    }
-
+      ..saudiarabiagoalsagainst = argentina1 + poland2 + mexico3
+      ..groupwinner = groupwinner ?? '';
     notifyListeners();
   }
 }
@@ -123,4 +109,5 @@ class Simulator {
   int saudiarabiapoints = 0;
   int saudiarabiagoalsfor = 0;
   int saudiarabiagoalsagainst = 0;
+  String groupwinner = '';
 }
