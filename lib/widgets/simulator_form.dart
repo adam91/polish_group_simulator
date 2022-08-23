@@ -351,47 +351,58 @@ class _SimulatorFormState extends State<SimulatorForm> {
                 ),
                 Consumer<SimulatorProvider>(
                   builder: (context, simulator, _) {
-                    Map<dynamic, dynamic> points = {
+                    Map<dynamic, dynamic>? points = {
                       'Poland': {
                         'points': simulator.data.polandpoints,
                         'goalsfor': simulator.data.polandgoalsfor,
-                        'goalsagainst': simulator.data.polandgoalsagainst
+                        'goalsagainst': simulator.data.polandgoalsagainst,
+                        'goalsdifference': simulator.data.polandgoalsdifference
                       },
                       'Mexico': {
                         'points': simulator.data.mexicopoints,
                         'goalsfor': simulator.data.mexicogoalsfor,
-                        'goalsagainst': simulator.data.mexicogoalsagainst
+                        'goalsagainst': simulator.data.mexicogoalsagainst,
+                        'goalsdifference': simulator.data.mexicogoalsdifference
                       },
                       'Argentina': {
                         'points': simulator.data.argentinapoints,
                         'goalsfor': simulator.data.argentinagoalsfor,
-                        'goalsagainst': simulator.data.argentinagoalsagainst
+                        'goalsagainst': simulator.data.argentinagoalsagainst,
+                        'goalsdifference':
+                            simulator.data.argentinagoalsdifference
                       },
                       'Saudi Arabia': {
                         'points': simulator.data.saudiarabiapoints,
                         'goalsfor': simulator.data.saudiarabiagoalsfor,
-                        'goalsagainst': simulator.data.saudiarabiagoalsagainst
+                        'goalsagainst': simulator.data.saudiarabiagoalsagainst,
+                        'goalsdifference':
+                            simulator.data.saudiarabiagoalsdifference
                       },
                     };
 
                     var mapsort = Map.fromEntries(
                       points.entries.toList()
                         ..sort(
-                          (e1, e2) {
-                            int a = e1.value['points']
-                                .compareTo(e2.value['points']);
-                            if (a != 0) return a;
-                            return e1.value['goalsfor']
-                                .compareTo(e2.value['goalsfor']);
+                          (b, a) {
+                            int i =
+                                a.value['points'].compareTo(b.value['points']);
+                            if (i != 0) return i;
+
+                            return a.value['goalsdifference']
+                                    .compareTo(b.value['goalsdifference']) &
+                                a.value['goalsfor']
+                                    .compareTo(b.value['goalsfor']);
                           },
                         ),
                     );
 
-                    return Text(
-                        '''$mapsort Poland goals: ${simulator.data.polandgoalsfor}:${simulator.data.polandgoalsagainst} Points: ${simulator.data.polandpoints}
-                           Mexico goals: ${simulator.data.mexicogoalsfor}:${simulator.data.mexicogoalsagainst} Points: ${simulator.data.mexicopoints}
-                           Argentina goals: ${simulator.data.argentinagoalsfor}:${simulator.data.argentinagoalsagainst} Points:  ${simulator.data.argentinapoints}
-                           Saudi Arabia goals: ${simulator.data.saudiarabiagoalsfor}:${simulator.data.saudiarabiagoalsagainst} Points: ${simulator.data.saudiarabiapoints}''');
+                    return Text('''
+                    Standings                         Points   Goals For     Goals Against    +/-
+                    1. ${mapsort.keys.elementAt(0)}                              ${mapsort.values.elementAt(0).values.elementAt(0)}           ${mapsort.values.elementAt(0).values.elementAt(1)}                          ${mapsort.values.elementAt(0).values.elementAt(2)}                       ${mapsort.values.elementAt(0).values.elementAt(3)}
+                    2  ${mapsort.keys.elementAt(1)}                              ${mapsort.values.elementAt(0).values.elementAt(0)}           ${mapsort.values.elementAt(1).values.elementAt(1)}                          ${mapsort.values.elementAt(1).values.elementAt(2)}                       ${mapsort.values.elementAt(1).values.elementAt(3)}
+                    3. ${mapsort.keys.elementAt(2)}                              ${mapsort.values.elementAt(0).values.elementAt(0)}           ${mapsort.values.elementAt(2).values.elementAt(1)}                          ${mapsort.values.elementAt(2).values.elementAt(2)}                       ${mapsort.values.elementAt(2).values.elementAt(3)}
+                    4. ${mapsort.keys.elementAt(3)}                              ${mapsort.values.elementAt(0).values.elementAt(0)}           ${mapsort.values.elementAt(3).values.elementAt(1)}                          ${mapsort.values.elementAt(3).values.elementAt(2)}                       ${mapsort.values.elementAt(3).values.elementAt(3)}
+                    ''');
                   },
                 ),
               ],
