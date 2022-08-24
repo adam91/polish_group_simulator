@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:group_simulator/providers/simulator_provider.dart';
 import 'package:group_simulator/widgets/custom_widgets.dart';
@@ -74,233 +73,77 @@ class _SimulatorFormState extends State<SimulatorForm> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SizedBox(
-                            height: 60,
-                            width: 60.0,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                hintText: 'ARG',
-                                counterText: "",
-                              ),
-                              maxLength: 2,
-                              controller: argentina1Controller,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
+                          TextFieldWidget(
+                              countryshortcut: 'ARG',
+                              controllername: argentina1Controller),
                           const SizedBox(width: 8.0),
-                          SizedBox(
-                            height: 60,
-                            width: 60.0,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                hintText: 'SAU',
-                                counterText: "",
-                              ),
-                              maxLength: 2,
-                              controller: saudiarabia1Controller,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
+                          TextFieldWidget(
+                              countryshortcut: 'SAU',
+                              controllername: saudiarabia1Controller)
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SizedBox(
-                            height: 60,
-                            width: 60.0,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                hintText: 'MEX',
-                                counterText: "",
-                              ),
-                              maxLength: 2,
-                              controller: mexico1Controller,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
+                          TextFieldWidget(
+                              countryshortcut: 'MEX',
+                              controllername: mexico1Controller),
                           const SizedBox(width: 8.0),
-                          SizedBox(
-                            width: 60.0,
-                            height: 60,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                hintText: 'POL',
-                                counterText: "",
-                              ),
-                              maxLength: 2,
-                              controller: poland1Controller,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
+                          TextFieldWidget(
+                              countryshortcut: 'POL',
+                              controllername: poland1Controller)
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SizedBox(
-                            width: 60.0,
-                            height: 60,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                hintText: 'POL',
-                                counterText: "",
-                              ),
-                              maxLength: 2,
-                              controller: poland2Controller,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
+                          TextFieldWidget(
+                              countryshortcut: 'POL',
+                              controllername: poland2Controller),
                           const SizedBox(width: 8.0),
-                          SizedBox(
-                            width: 60.0,
-                            height: 60,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                hintText: 'SAU',
-                                counterText: "",
-                              ),
-                              maxLength: 2,
-                              controller: saudiarabia2Controller,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
+                          TextFieldWidget(
+                              countryshortcut: 'SAU',
+                              controllername: saudiarabia2Controller)
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SizedBox(
-                            width: 60.0,
-                            height: 60,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                hintText: 'ARG',
-                                counterText: "",
-                              ),
-                              maxLength: 2,
-                              controller: argentina2Controller,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
+                          TextFieldWidget(
+                              countryshortcut: 'ARG',
+                              controllername: argentina2Controller),
                           const SizedBox(width: 8.0),
-                          SizedBox(
-                            width: 60.0,
-                            height: 60,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                hintText: 'MEX',
-                                counterText: "",
-                              ),
-                              maxLength: 2,
-                              controller: mexico2Controller,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
+                          TextFieldWidget(
+                              countryshortcut: 'MEX',
+                              controllername: mexico2Controller)
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SizedBox(
-                            width: 60.0,
-                            height: 60,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                hintText: 'POL',
-                                counterText: "",
-                              ),
-                              maxLength: 2,
-                              controller: poland3Controller,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
+                          TextFieldWidget(
+                              countryshortcut: 'POL',
+                              controllername: poland3Controller),
                           const SizedBox(width: 8.0),
-                          SizedBox(
-                            width: 60.0,
-                            height: 60,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                hintText: 'ARG',
-                                counterText: "",
-                              ),
-                              maxLength: 2,
-                              controller: argentina3Controller,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
+                          TextFieldWidget(
+                              countryshortcut: 'ARG',
+                              controllername: argentina3Controller)
                         ],
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
-                          SizedBox(
-                            width: 60.0,
-                            height: 60,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                hintText: 'SAU',
-                                counterText: "",
-                              ),
-                              maxLength: 2,
-                              controller: saudiarabia3Controller,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
-                          SizedBox(
-                            width: 60.0,
-                            height: 60,
-                            child: TextFormField(
-                              decoration: const InputDecoration(
-                                hintText: 'MEX',
-                                counterText: "",
-                              ),
-                              maxLength: 2,
-                              controller: mexico3Controller,
-                              keyboardType: TextInputType.number,
-                              inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly
-                              ],
-                            ),
-                          ),
+                          TextFieldWidget(
+                              countryshortcut: 'SAU',
+                              controllername: saudiarabia3Controller),
+                          TextFieldWidget(
+                              countryshortcut: 'MEX',
+                              controllername: mexico3Controller)
                         ],
                       ),
                     ],
@@ -330,35 +173,148 @@ class _SimulatorFormState extends State<SimulatorForm> {
                     child: const Text('Check results!'),
                     onPressed: () {
                       context.read<SimulatorProvider>().updateSimulatorInfo(
-                            poland1: int.parse(poland1Controller.text),
-                            poland2: int.parse(poland2Controller.text),
-                            poland3: int.parse(poland3Controller.text),
-                            mexico1: int.parse(mexico1Controller.text),
-                            mexico2: int.parse(mexico2Controller.text),
-                            mexico3: int.parse(mexico3Controller.text),
-                            argentina1: int.parse(argentina1Controller.text),
-                            argentina2: int.parse(argentina2Controller.text),
-                            argentina3: int.parse(argentina3Controller.text),
+                            poland1: int.tryParse(poland1Controller.text) ?? 0,
+                            poland2: int.tryParse(poland2Controller.text) ?? 0,
+                            poland3: int.tryParse(poland3Controller.text) ?? 0,
+                            mexico1: int.tryParse(mexico1Controller.text) ?? 0,
+                            mexico2: int.tryParse(mexico2Controller.text) ?? 0,
+                            mexico3: int.tryParse(mexico3Controller.text) ?? 0,
+                            argentina1:
+                                int.tryParse(argentina1Controller.text) ?? 0,
+                            argentina2:
+                                int.tryParse(argentina2Controller.text) ?? 0,
+                            argentina3:
+                                int.tryParse(argentina3Controller.text) ?? 0,
                             saudiarabia1:
-                                int.parse(saudiarabia1Controller.text),
+                                int.tryParse(saudiarabia1Controller.text) ?? 0,
                             saudiarabia2:
-                                int.parse(saudiarabia2Controller.text),
+                                int.tryParse(saudiarabia2Controller.text) ?? 0,
                             saudiarabia3:
-                                int.parse(saudiarabia3Controller.text),
+                                int.tryParse(saudiarabia3Controller.text) ?? 0,
                           );
                     },
                   ),
                 ),
                 Consumer<SimulatorProvider>(
                   builder: (context, simulator, _) {
-                    return Text(
-                        '''Poland goals: ${simulator.data.polandgoalsfor}:${simulator.data.polandgoalsagainst} Points: ${simulator.data.polandpoints}
-                           Mexico goals: ${simulator.data.mexicogoalsfor}:${simulator.data.mexicogoalsagainst} Points: ${simulator.data.mexicopoints}
-                           Argentina goals: ${simulator.data.argentinagoalsfor}:${simulator.data.argentinagoalsagainst} Points:  ${simulator.data.argentinapoints}
-                           Saudi Arabia goals: ${simulator.data.saudiarabiagoalsfor}:${simulator.data.saudiarabiagoalsagainst} Points: ${simulator.data.saudiarabiapoints}''');
+                    Map<dynamic, dynamic>? points = {
+                      'Poland': {
+                        'points': simulator.data.polandpoints,
+                        'goalsfor': simulator.data.polandgoalsfor,
+                        'goalsagainst': simulator.data.polandgoalsagainst,
+                        'goalsdifference': simulator.data.polandgoalsdifference
+                      },
+                      'Mexico': {
+                        'points': simulator.data.mexicopoints,
+                        'goalsfor': simulator.data.mexicogoalsfor,
+                        'goalsagainst': simulator.data.mexicogoalsagainst,
+                        'goalsdifference': simulator.data.mexicogoalsdifference
+                      },
+                      'Argentina': {
+                        'points': simulator.data.argentinapoints,
+                        'goalsfor': simulator.data.argentinagoalsfor,
+                        'goalsagainst': simulator.data.argentinagoalsagainst,
+                        'goalsdifference':
+                            simulator.data.argentinagoalsdifference
+                      },
+                      'Saudi Arabia': {
+                        'points': simulator.data.saudiarabiapoints,
+                        'goalsfor': simulator.data.saudiarabiagoalsfor,
+                        'goalsagainst': simulator.data.saudiarabiagoalsagainst,
+                        'goalsdifference':
+                            simulator.data.saudiarabiagoalsdifference
+                      },
+                    };
+
+                    var mapsort = Map.fromEntries(
+                      points.entries.toList()
+                        ..sort(
+                          (b, a) {
+                            int i =
+                                a.value['points'].compareTo(b.value['points']);
+                            if (i != 0) return i;
+
+                            return a.value['goalsdifference']
+                                .compareTo(b.value['goalsdifference']);
+                          },
+                        ),
+                    );
+
+                    return DataTable(
+                      columnSpacing: 3.0,
+                      columns: const [
+                        DataColumn(
+                          label: Text('Place'),
+                        ),
+                        DataColumn(
+                          label: Text('Country'),
+                        ),
+                        DataColumn(
+                          label: Text('Points'),
+                        ),
+                        DataColumn(
+                          label: Text('Scored'),
+                        ),
+                        DataColumn(
+                          label: Text('Lost'),
+                        ),
+                        DataColumn(
+                          label: Text('+/-'),
+                        ),
+                      ],
+                      rows: [
+                        DataRow(cells: [
+                          const DataCell(Text('1.')),
+                          DataCell(Text(mapsort.keys.elementAt(0))),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(0).values.elementAt(0)}')),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(0).values.elementAt(1)}')),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(0).values.elementAt(2)}')),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(0).values.elementAt(3)}')),
+                        ]),
+                        DataRow(cells: [
+                          const DataCell(Text('2.')),
+                          DataCell(Text(mapsort.keys.elementAt(1))),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(1).values.elementAt(0)}')),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(1).values.elementAt(1)}')),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(1).values.elementAt(2)}')),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(1).values.elementAt(3)}')),
+                        ]),
+                        DataRow(cells: [
+                          const DataCell(Text('3.')),
+                          DataCell(Text(mapsort.keys.elementAt(2))),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(2).values.elementAt(0)}')),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(2).values.elementAt(1)}')),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(2).values.elementAt(2)}')),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(2).values.elementAt(3)}')),
+                        ]),
+                        DataRow(cells: [
+                          const DataCell(Text('4.')),
+                          DataCell(Text(mapsort.keys.elementAt(3))),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(3).values.elementAt(0)}')),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(3).values.elementAt(1)}')),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(3).values.elementAt(2)}')),
+                          DataCell(Text(
+                              '${mapsort.values.elementAt(3).values.elementAt(3)}')),
+                        ]),
+                      ],
+                    );
                   },
                 ),
-                Text(Simulator().polandpoints.toString())
               ],
             ),
           ],

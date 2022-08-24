@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:group_simulator/pages/edit_form.dart';
-import 'package:group_simulator/providers/simulator_provider.dart';
+import 'package:group_simulator/pages/home_screen.dart';
 
 class SimulatorPage extends StatefulWidget {
   const SimulatorPage({Key? key}) : super(key: key);
@@ -20,15 +18,10 @@ class _SimulatorPageState extends State<SimulatorPage> {
             onPressed: () {
               Navigator.push<MaterialPageRoute>(
                 context,
-                MaterialPageRoute(builder: (context) => const EditForm()),
+                MaterialPageRoute(builder: (context) => const HomeScreen()),
               );
             },
-            child: const Text(''),
-          ),
-          Consumer<SimulatorProvider>(
-            builder: (context, simulator, _) {
-              return const Text('');
-            },
+            child: const Text('Test page - not used yet'),
           ),
         ],
       ),
