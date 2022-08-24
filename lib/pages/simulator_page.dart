@@ -23,11 +23,11 @@ class _SimulatorPageState extends State<SimulatorPage> {
                 MaterialPageRoute(builder: (context) => const EditForm()),
               );
             },
-            child: const Text('d'),
+            child: const Text(''),
           ),
           Consumer<SimulatorProvider>(
             builder: (context, simulator, _) {
-              return Text(Simulator().polandgoalsfor.toString());
+              return const Text('');
             },
           ),
         ],
