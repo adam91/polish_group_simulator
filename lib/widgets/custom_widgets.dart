@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class FlagBoxWidget extends StatelessWidget {
   const FlagBoxWidget({Key? key, required this.flagname}) : super(key: key);
@@ -36,12 +37,12 @@ var flags = {
       'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/125px-Flag_of_Saudi_Arabia.svg.png',
 };
 
-/* class TextFieldWidget extends StatelessWidget {
+class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget(
       {super.key, required this.countryshortcut, required this.controllername});
 
   final String countryshortcut;
-  final String controllername;
+  final TextEditingController controllername;
 
   @override
   Widget build(BuildContext context) {
@@ -61,5 +62,3 @@ var flags = {
     );
   }
 }
-
-*/
