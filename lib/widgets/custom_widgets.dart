@@ -26,22 +26,24 @@ class FlagBoxWidget extends StatelessWidget {
   }
 }
 
+const String wiki = 'https://upload.wikimedia.org/wikipedia/';
+
 var flags = {
   'poland':
-      'https://upload.wikimedia.org/wikipedia/en/thumb/1/12/Flag_of_Poland.svg/125px-Flag_of_Poland.svg.png',
+      ('${wiki}en/thumb/1/12/Flag_of_Poland.svg/125px-Flag_of_Poland.svg.png'),
   'mexico':
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Flag_of_Mexico.svg/125px-Flag_of_Mexico.svg.png',
+      '${wiki}commons/thumb/f/fc/Flag_of_Mexico.svg/125px-Flag_of_Mexico.svg.png',
   'argentina':
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/125px-Flag_of_Argentina.svg.png',
+      '${wiki}commons/thumb/1/1a/Flag_of_Argentina.svg/125px-Flag_of_Argentina.svg.png',
   'saudiarabia':
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/125px-Flag_of_Saudi_Arabia.svg.png',
+      '${wiki}commons/thumb/0/0d/Flag_of_Saudi_Arabia.svg/125px-Flag_of_Saudi_Arabia.svg.png',
 };
 
 class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget(
-      {super.key, required this.countryshortcut, required this.controllername});
+      {super.key, required this.countryShortcut, required this.controllername});
 
-  final String countryshortcut;
+  final String countryShortcut;
   final TextEditingController controllername;
 
   @override
@@ -51,7 +53,7 @@ class TextFieldWidget extends StatelessWidget {
       height: 60,
       child: TextFormField(
         decoration: InputDecoration(
-          hintText: countryshortcut,
+          hintText: countryShortcut,
           counterText: "",
         ),
         maxLength: 2,

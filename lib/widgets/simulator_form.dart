@@ -74,11 +74,11 @@ class _SimulatorFormState extends State<SimulatorForm> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           TextFieldWidget(
-                              countryshortcut: 'ARG',
+                              countryShortcut: 'ARG',
                               controllername: argentina1Controller),
                           const SizedBox(width: 8.0),
                           TextFieldWidget(
-                              countryshortcut: 'SAU',
+                              countryShortcut: 'SAU',
                               controllername: saudiarabia1Controller)
                         ],
                       ),
@@ -87,11 +87,11 @@ class _SimulatorFormState extends State<SimulatorForm> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           TextFieldWidget(
-                              countryshortcut: 'MEX',
+                              countryShortcut: 'MEX',
                               controllername: mexico1Controller),
                           const SizedBox(width: 8.0),
                           TextFieldWidget(
-                              countryshortcut: 'POL',
+                              countryShortcut: 'POL',
                               controllername: poland1Controller)
                         ],
                       ),
@@ -100,11 +100,11 @@ class _SimulatorFormState extends State<SimulatorForm> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           TextFieldWidget(
-                              countryshortcut: 'POL',
+                              countryShortcut: 'POL',
                               controllername: poland2Controller),
                           const SizedBox(width: 8.0),
                           TextFieldWidget(
-                              countryshortcut: 'SAU',
+                              countryShortcut: 'SAU',
                               controllername: saudiarabia2Controller)
                         ],
                       ),
@@ -113,11 +113,11 @@ class _SimulatorFormState extends State<SimulatorForm> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           TextFieldWidget(
-                              countryshortcut: 'ARG',
+                              countryShortcut: 'ARG',
                               controllername: argentina2Controller),
                           const SizedBox(width: 8.0),
                           TextFieldWidget(
-                              countryshortcut: 'MEX',
+                              countryShortcut: 'MEX',
                               controllername: mexico2Controller)
                         ],
                       ),
@@ -126,11 +126,11 @@ class _SimulatorFormState extends State<SimulatorForm> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           TextFieldWidget(
-                              countryshortcut: 'POL',
+                              countryShortcut: 'POL',
                               controllername: poland3Controller),
                           const SizedBox(width: 8.0),
                           TextFieldWidget(
-                              countryshortcut: 'ARG',
+                              countryShortcut: 'ARG',
                               controllername: argentina3Controller)
                         ],
                       ),
@@ -139,10 +139,10 @@ class _SimulatorFormState extends State<SimulatorForm> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           TextFieldWidget(
-                              countryshortcut: 'SAU',
+                              countryShortcut: 'SAU',
                               controllername: saudiarabia3Controller),
                           TextFieldWidget(
-                              countryshortcut: 'MEX',
+                              countryShortcut: 'MEX',
                               controllername: mexico3Controller)
                         ],
                       ),

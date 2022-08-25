@@ -10,11 +10,11 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         body: Column(
           children: [
-            const Text('Witam państwa'),
+            const Text('Hello'),
             ElevatedButton(
               onPressed: () {
                 Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const EditForm()));
+                    MaterialPageRoute(builder: (context) => const EditPage()));
               },
               child: const Text('Simulator page'),
             ),
