@@ -2,6 +2,9 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
+int scoreEqualityValue(left, right) => left == right ? 1 : 0;
+int scoreBetterValue(left, right) => left > right ? 3 : 0;
+
 class SimulatorProvider extends ChangeNotifier {
   final _simulator = Simulator();
 
@@ -50,32 +53,32 @@ class SimulatorProvider extends ChangeNotifier {
       ..saudiarabia1 = saudiarabia1!
       ..saudiarabia2 = saudiarabia2!
       ..saudiarabia3 = saudiarabia3!
-      ..polandpoints = ((poland1 > mexico1) ? 3 : 0) +
-          ((poland1 == mexico1) ? 1 : 0) +
-          ((poland2 > saudiarabia2) ? 3 : 0) +
-          ((poland2 == saudiarabia2) ? 1 : 0) +
-          ((poland3 > argentina3) ? 3 : 0) +
-          ((poland3 == argentina3) ? 1 : 0)
+      ..polandpoints = scoreBetterValue(poland1, mexico1) +
+          scoreEqualityValue(poland1, mexico1) +
+          scoreBetterValue(poland2, saudiarabia2) +
+          scoreEqualityValue(poland2, saudiarabia2) +
+          scoreBetterValue(poland3, mexico3) +
+          scoreEqualityValue(poland3, argentina3)
       ..polandgoalsfor = poland1 + poland2 + poland3
       ..polandgoalsagainst = mexico1 + saudiarabia2 + argentina3
       ..polandgoalsdifference =
           poland1 + poland2 + poland3 - mexico1 - saudiarabia2 - argentina3
-      ..mexicopoints = ((poland1 < mexico1) ? 3 : 0) +
-          ((poland1 == mexico1) ? 1 : 0) +
-          ((mexico2 > argentina2) ? 3 : 0) +
-          ((mexico2 == argentina2) ? 1 : 0) +
-          ((mexico3 > saudiarabia3) ? 3 : 0) +
-          ((mexico3 == saudiarabia3) ? 1 : 0)
+      ..mexicopoints = scoreBetterValue(mexico1, poland1) +
+          scoreEqualityValue(poland1, mexico1) +
+          scoreBetterValue(mexico2, argentina2) +
+          scoreEqualityValue(argentina2, mexico2) +
+          scoreBetterValue(mexico3, saudiarabia3) +
+          scoreEqualityValue(saudiarabia3, mexico3)
       ..mexicogoalsfor = mexico1 + mexico2 + mexico3
       ..mexicogoalsagainst = poland1 + argentina2 + saudiarabia3
       ..mexicogoalsdifference =
           mexico1 + mexico2 + mexico3 - poland1 - argentina2 - saudiarabia3
-      ..argentinapoints = ((argentina1 > saudiarabia1) ? 3 : 0) +
-          ((argentina1 == saudiarabia1) ? 1 : 0) +
-          ((argentina2 > mexico2) ? 3 : 0) +
-          ((argentina2 == mexico2) ? 1 : 0) +
-          ((argentina3 > poland3) ? 3 : 0) +
-          ((argentina3 == poland3) ? 1 : 0)
+      ..argentinapoints = scoreBetterValue(argentina1, saudiarabia1) +
+          scoreEqualityValue(argentina1, saudiarabia1) +
+          scoreBetterValue(argentina2, mexico2) +
+          scoreEqualityValue(argentina2, mexico2) +
+          scoreBetterValue(argentina3, poland3) +
+          scoreEqualityValue(argentina3, poland3)
       ..argentinagoalsfor = argentina1 + argentina2 + argentina3
       ..argentinagoalsagainst = saudiarabia1 + mexico2 + poland3
       ..argentinagoalsdifference = argentina1 +
@@ -84,12 +87,12 @@ class SimulatorProvider extends ChangeNotifier {
           saudiarabia1 -
           mexico2 -
           poland3
-      ..saudiarabiapoints = ((argentina1 < saudiarabia1) ? 3 : 0) +
-          ((argentina1 == saudiarabia1) ? 1 : 0) +
-          ((saudiarabia2 > poland2) ? 3 : 0) +
-          ((saudiarabia2 == poland2) ? 1 : 0) +
-          ((mexico3 < saudiarabia3) ? 3 : 0) +
-          ((mexico3 == saudiarabia3) ? 1 : 0)
+      ..saudiarabiapoints = scoreBetterValue(saudiarabia1, argentina1) +
+          scoreEqualityValue(argentina1, saudiarabia1) +
+          scoreBetterValue(saudiarabia2, poland2) +
+          scoreEqualityValue(poland2, saudiarabia2) +
+          scoreBetterValue(saudiarabia3, mexico3) +
+          scoreEqualityValue(saudiarabia3, mexico3)
       ..saudiarabiagoalsfor = saudiarabia1 + saudiarabia2 + saudiarabia3
       ..saudiarabiagoalsagainst = argentina1 + poland2 + mexico3
       ..saudiarabiagoalsdifference = saudiarabia1 +

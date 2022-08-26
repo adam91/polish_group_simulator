@@ -225,17 +225,21 @@ class _SimulatorFormState extends State<SimulatorForm> {
                             simulator.data.saudiarabiagoalsdifference
                       },
                     };
-
-                    var mapsort = Map.fromEntries(
+                    final mapsort = Map.fromEntries(
                       points.entries.toList()
                         ..sort(
                           (b, a) {
-                            int i =
-                                a.value['points'].compareTo(b.value['points']);
-                            if (i != 0) return i;
-
-                            return a.value['goalsdifference']
-                                .compareTo(b.value['goalsdifference']);
+                            int index = 0;
+                            String currentKey = keys[index];
+                            while (a.value[currentKey]!
+                                        .compareTo(b.value[currentKey]!) ==
+                                    0 &&
+                                index < keys.length - 1) {
+                              ++index;
+                              currentKey = keys[index];
+                            }
+                            return a.value[currentKey]!
+                                .compareTo(b.value[currentKey]!);
                           },
                         ),
                     );

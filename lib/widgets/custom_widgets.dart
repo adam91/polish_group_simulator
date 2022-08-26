@@ -28,6 +28,8 @@ class FlagBoxWidget extends StatelessWidget {
 
 const String wiki = 'https://upload.wikimedia.org/wikipedia/';
 
+const keys = ['points', 'goalsdifference', 'goalsfor'];
+
 var flags = {
   'poland':
       ('${wiki}en/thumb/1/12/Flag_of_Poland.svg/125px-Flag_of_Poland.svg.png'),
