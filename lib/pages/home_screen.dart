@@ -8,17 +8,26 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Column(
-          children: [
-            const Text('Hello'),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => const EditPage()));
-              },
-              child: const Text('Simulator page'),
-            ),
-          ],
+        body: SizedBox(
+          width: double.infinity,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Hello, click to play simulator! :)'),
+              const SizedBox(
+                height: 50, // <-- SEE HERE
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const EditPage()));
+                },
+                child: const Text('CLICK HERE'),
+              ),
+            ],
+          ),
         ),
       ),
     );
