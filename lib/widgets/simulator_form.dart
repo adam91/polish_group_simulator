@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:group_simulator/pages/home_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:group_simulator/providers/simulator_provider.dart';
 import 'package:group_simulator/widgets/custom_widgets.dart';
@@ -331,6 +332,15 @@ class _SimulatorFormState extends State<SimulatorForm> {
                         ],
                       );
                     },
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen()));
+                    },
+                    child: const Text('Come back to home page'),
                   ),
                 ],
               ),

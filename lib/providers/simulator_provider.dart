@@ -2,8 +2,20 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-int scoreEqualityValue(left, right) => left == right ? 1 : 0;
-int scoreBetterValue(left, right) => left > right ? 3 : 0;
+int scoreEqualityValue(left, right) => left > right ? 1 : 0;
+int scoreBetterValue(left, right) => left > right ? 1 : 0;
+int calculateScore() {
+  final countryPairs = [
+    ['poland1', 'mexico1'],
+    ['poland2', 'saudiarabia2']
+  ];
+  int score = 0;
+  for (final List<String> pair in countryPairs) {
+    score += scoreBetterValue(pair[0], pair[1]);
+  }
+
+  return score;
+}
 
 class SimulatorProvider extends ChangeNotifier {
   final _simulator = Simulator();
@@ -53,12 +65,7 @@ class SimulatorProvider extends ChangeNotifier {
       ..saudiarabia1 = saudiarabia1!
       ..saudiarabia2 = saudiarabia2!
       ..saudiarabia3 = saudiarabia3!
-      ..polandpoints = scoreBetterValue(poland1, mexico1) +
-          scoreEqualityValue(poland1, mexico1) +
-          scoreBetterValue(poland2, saudiarabia2) +
-          scoreEqualityValue(poland2, saudiarabia2) +
-          scoreBetterValue(poland3, mexico3) +
-          scoreEqualityValue(poland3, argentina3)
+      ..polandpoints = calculateScore()
       ..polandgoalsfor = poland1 + poland2 + poland3
       ..polandgoalsagainst = mexico1 + saudiarabia2 + argentina3
       ..polandgoalsdifference =
