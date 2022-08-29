@@ -28,7 +28,7 @@ class FlagBoxWidget extends StatelessWidget {
 
 const String wiki = 'https://upload.wikimedia.org/wikipedia/';
 
-const keys = ['points', 'goalsdifference', 'goalsfor'];
+const keys = ['points', 'goaldifference', 'goalsfor'];
 
 var flags = {
   'poland':

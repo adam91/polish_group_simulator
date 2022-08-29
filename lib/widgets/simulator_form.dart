@@ -213,30 +213,28 @@ class _SimulatorFormState extends State<SimulatorForm> {
                           'points': simulator.data.polandpoints,
                           'goalsfor': simulator.data.polandgoalsfor,
                           'goalsagainst': simulator.data.polandgoalsagainst,
-                          'goalsdifference':
-                              simulator.data.polandgoalsdifference
+                          'goaldifference': simulator.data.polandgoaldifference
                         },
                         'Mexico': {
                           'points': simulator.data.mexicopoints,
                           'goalsfor': simulator.data.mexicogoalsfor,
                           'goalsagainst': simulator.data.mexicogoalsagainst,
-                          'goalsdifference':
-                              simulator.data.mexicogoalsdifference
+                          'goaldifference': simulator.data.mexicogoaldifference
                         },
                         'Argentina': {
                           'points': simulator.data.argentinapoints,
                           'goalsfor': simulator.data.argentinagoalsfor,
                           'goalsagainst': simulator.data.argentinagoalsagainst,
-                          'goalsdifference':
-                              simulator.data.argentinagoalsdifference
+                          'goaldifference':
+                              simulator.data.argentinagoaldifference
                         },
                         'Saudi Arabia': {
                           'points': simulator.data.saudiarabiapoints,
                           'goalsfor': simulator.data.saudiarabiagoalsfor,
                           'goalsagainst':
                               simulator.data.saudiarabiagoalsagainst,
-                          'goalsdifference':
-                              simulator.data.saudiarabiagoalsdifference
+                          'goaldifference':
+                              simulator.data.saudiarabiagoaldifference
                         },
                       };
                       final mapsort = Map.fromEntries(
